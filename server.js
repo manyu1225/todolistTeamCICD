@@ -7,7 +7,7 @@ const todos = [];
 
 const requestListener = (req, res) => {
   if (req.url == "/todos" && req.method == "GET") {
-    // getTodo.js
+    getTodo(res, headers, todos);
   } else if (req.url == "/todos" && req.method == "POST") {
     // postTodo.js
     postTodo(req, res, todos);
