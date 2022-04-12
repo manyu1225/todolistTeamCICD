@@ -3,16 +3,17 @@ const { v4: uuidv4 } = require('uuid');
 const { headers } = require('./libs');
 const errorHandle = require('./errorHandle');
 const postTodo = require('./postTodo');
+const getTodo = require('./getTodo');
 const todos = [];
 
 const requestListener = (req, res) => {
   if (req.url == "/todos" && req.method == "GET") {
-    getTodo(res, headers, todos);
+    getTodo(res, todos);
   } else if (req.url == "/todos" && req.method == "POST") {
     // postTodo.js
     postTodo(req, res, todos);
   } else if (req.url == "/todos" && req.method == "DELETE") {
-    // deleteTodo.js
+    //deleteTodo(req, res, todos);
   } else if (req.url.startsWith("/todos/") && req.method == "DELETE") {
     // deleteTodo.js
   } else if (req.url.startsWith("/todos/") && req.method == "PATCH") {
