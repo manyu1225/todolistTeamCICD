@@ -4,6 +4,7 @@ const { headers } = require('./libs');
 const errorHandle = require('./errorHandle');
 const postTodo = require('./postTodo');
 const getTodo = require('./getTodo');
+const deleteTodo = require('./deleteTodo');
 const todos = [];
 
 const requestListener = (req, res) => {
@@ -12,10 +13,8 @@ const requestListener = (req, res) => {
   } else if (req.url == "/todos" && req.method == "POST") {
     // postTodo.js
     postTodo(req, res, todos);
-  } else if (req.url == "/todos" && req.method == "DELETE") {
-    //deleteTodo(req, res, todos);
-  } else if (req.url.startsWith("/todos/") && req.method == "DELETE") {
-    // deleteTodo.js
+  } else if (req.method == "DELETE") {
+    deleteTodo(req, res, todos);
   } else if (req.url.startsWith("/todos/") && req.method == "PATCH") {
     // patchTodo.js
   } else if (req.method == "OPTIONS") {
