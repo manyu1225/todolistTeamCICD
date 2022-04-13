@@ -1,5 +1,7 @@
-function getTodo(res, headInfo, todos) {
-    res.writeHead(200, headInfo);
+const { headers } = require('./libs');
+
+function getTodo(res, todos) {
+    res.writeHead(200, headers);
     res.write(JSON.stringify(
         {
             "status": "200",
