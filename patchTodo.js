@@ -1,4 +1,4 @@
-const errorHandle = require('./errorHandle');
+const errorHandle = require('./utility/errorHandle');
 const { headers } = require('./libs');
 
 function patchTodo(req, res, todos) {
