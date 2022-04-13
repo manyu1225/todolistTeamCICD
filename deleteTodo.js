@@ -11,7 +11,7 @@ function delTodo(req, res, todos) {
             res.write(
                 JSON.stringify({
                     "status": "200",
-                    "data": "todos"
+                    "data": todos
                 })
             );
         } else {
@@ -28,7 +28,7 @@ function delTodo(req, res, todos) {
         res.write(
             JSON.stringify({
                 "status": "200",
-                "data": "todos"
+                "data": todos
             })
         );
     }
