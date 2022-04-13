@@ -11,7 +11,7 @@ function patchTodo(req, res, todos) {
         const title = JSON.parse(body).title;
         const id = req.url.split('/')[2];
 
-        const index =todos.find(element=>element.id = id)
+        const index =todos.findIndex(element=>element.id == id)
         
         //沒正確傳入title
         if (!title) {
@@ -32,6 +32,7 @@ function patchTodo(req, res, todos) {
           status: 'success',
           data: todos
         }));
+        res.end();
     } catch {
       errorHandle(res);
     }
